@@ -1,0 +1,4 @@
+flask
+Beautifulsoup4
+Validators
+requests
