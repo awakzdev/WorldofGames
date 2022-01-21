@@ -1,0 +1,17 @@
+pipeline{
+    agent {
+        node {
+        label 'slave01'
+        customWorkspace '/home/modi/dev'
+        }
+    }
+    stages{
+        stage('test'){
+            steps{
+                dir ('/home/modi/devops-experts/pythonProject/lesson-2'){
+                    sh 'python3.6 3.py'
+                }
+            }
+        }
+    }
+}

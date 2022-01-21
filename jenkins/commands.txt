@@ -1,0 +1,14 @@
+# Start the master:
+docker-compose up -d master
+
+# Open your browser and past this address: http://localhost:80
+
+# Once Jenkins has started for the first time, you'll be asked to enter an initial administrator password/token.
+# Just run this command on your terminal and paste the token
+docker exec -it jenkins_master_1 bash -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+
+# Start the worker:
+docker-compose up -d
+
+# In case we want to scale out the worker:
+docker-compose up -d --scale worker=1

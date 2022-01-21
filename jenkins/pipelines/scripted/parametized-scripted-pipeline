@@ -1,0 +1,20 @@
+properties([parameters([string(defaultValue: 'slave01', name: 'nodeName')])])
+node (env.nodeName){
+    def mvnHome = 'I have set it'
+    stage('Preparation') { // for display purposes
+        bat(/echo Preparation/)
+    }
+    stage('Build') {
+        // Run the maven build
+        withEnv(["MVN_HOME=$mvnHome"]) {
+            if (isUnix()) {
+                sh 'echo XXX'
+            } else {
+                bat(/echo $MVN_HOME/)
+            }
+        }
+    }
+    stage('Results') {
+        echo "Results"
+    }
+}

@@ -1,0 +1,6 @@
+my_slave = "slave01"
+node (my_slave){
+    stage('Results') {
+        echo "${env.NODE_NAME}"
+    }
+}
