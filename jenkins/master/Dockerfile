@@ -1,0 +1,1 @@
+FROM eeacms/jenkins-master

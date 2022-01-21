@@ -1,0 +1,28 @@
+version: "3.3"
+services:
+  master:
+    image: moditamam/jenkins-master
+    ports:
+    - "80:8080"
+    environment:
+    - JAVA_OPTS=-Xmx2048m
+    volumes:
+    - jenkins-master:/var/jenkins_home
+
+  worker:
+    image: moditamam/jenkins-agent
+    environment:
+      JAVA_OPTS: "-Xmx2048m"
+      JENKINS_MASTER: "http://master:8080"
+      JENKINS_NAME: "worker"
+      JENKINS_USER: "admin"
+      JENKINS_PASS: "1234"
+      JENKINS_RETRY: "10"
+      JENKINS_LABELS: "agent_1"
+    volumes:
+    - jenkins-worker:/var/jenkins_home/worker
+    - $HOME:/external
+
+volumes:
+  jenkins-master:
+  jenkins-worker:

@@ -1,0 +1,15 @@
+pipeline{
+    agent {
+        node {
+        label 'slave01'
+        customWorkspace '/home/modi/dev'
+        }
+    }
+    stages{
+        stage('test'){
+            steps{
+                echo "Test"
+            }
+        }
+    }
+}
