@@ -8,11 +8,6 @@ pipeline {
                 sh 'python --version'
             }
         }
-        stage('Git pull') {
-            steps {
-                git 'https://github.com/awakzdev/WorldofGames'
-            }
-        }
         stage('Run Score flask') {
             steps {
                 sh 'python ./MainScores.py'
