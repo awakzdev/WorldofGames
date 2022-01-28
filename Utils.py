@@ -3,7 +3,7 @@ import os
 
 def utils():
     SCORES_FILE_NAME = "Scores.txt"
-    global BAD_RETURN_CODE
+    BAD_RETURN_CODE = -1
     return SCORES_FILE_NAME
 
 
