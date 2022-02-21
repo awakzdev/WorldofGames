@@ -5,6 +5,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh('docker build --build-arg http_proxy=${http_proxy} --build-arg https_proxy=${https_proxy}')
+            }
+        }    
+    stages {
+        stage('build') {
+            steps {
                 sh 'python --version'
             }
         }
