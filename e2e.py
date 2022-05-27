@@ -16,7 +16,7 @@ def main_function():
         print("Code 0, Website is up and running")
     else:
         print("Error, code number -1, Website is unreachable\nActivating URL")
-        app.run(host='0.0.0.0', port=8777)
+        app.run(host='127.0.0.1', port=8777)
     test_score_service()
 
 if __name__ == "__main__":
