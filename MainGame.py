@@ -1,3 +1,4 @@
 from Live import load_game
+import os
 load_game()
-print("Welcome, Ellie")
+print(f"Welcome, {os.getlogin()}")
