@@ -2,10 +2,10 @@ import random
 
 
 def guess_game(diff):
-    n = random.randint(1, diff * 2)
+    number = random.randint(1, diff * 2)
     if diff in range(1, 6):
         with open("secret_number.txt", 'w+') as my_file:
-            my_file.writelines(f"{n}")
+            my_file.writelines(f"{number}")
             my_file.close()
             print("Your number has been saved to a secret file.")
     else:
