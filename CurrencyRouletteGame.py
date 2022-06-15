@@ -10,7 +10,7 @@ def currency_roulette_game(diff):
 
     converted_number = data['conversion_rate']
 
-    # Y will convert the rate of USD to ILS = 3.18
+    # converted_number will convert the rate of USD to ILS = 3.18
     # diff is equal to difficulty
     number_chosen = random.randint(0, 50)
     rate = (converted_number * number_chosen - (5 - diff), converted_number * number_chosen + (5 - diff))
