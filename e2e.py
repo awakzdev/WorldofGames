@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
+from MainScores import app
 import requests
 import validators
-import sys
 
 
 def test_score_service():
@@ -16,8 +16,9 @@ def main_function():
     if up:
         print("Code 0, Website is up and running")
     else:
-        print("Error, code number -1, Website is unreachable")
-        sys.exit(1)
+        print("Error, Website is unreachable\nActivating URL")
+        app.run(host='127.0.0.1', port=8777)
+        test_score_service()
 
 
 if __name__ == "__main__":

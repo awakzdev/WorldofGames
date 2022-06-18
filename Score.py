@@ -2,6 +2,7 @@ import difficulty
 import Utils
 import os
 
+
 def score_adder(diff):
     if not os.path.isfile(Utils.utils()):
         with open(Utils.utils(), 'a+') as file:

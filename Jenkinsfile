@@ -2,20 +2,29 @@ pipeline {
     agent {
         dockerfile true
     }
-    stages {
-        stage('build') {
-            steps {
-                sh 'python --version'
-            }
-        }
-        stage('Run Score flask') {
+        stage('run') {
             steps {
                 sh 'python ./MainScores.py &'
             }
         }
-        stage('Test with E2E') {
+        stage('test') {
             steps {
                 sh 'python ./e2e.py'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'docker build -t awakz/worldofgames:latest .'
+            }
+        }
+        stage('login to dockerhub') {
+            steps {
+                sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin'
+            }
+        }
+        stage('push') {
+            steps {
+                sh 'docker push awakz/worldofgames:latest'
             }
         }
     }
