@@ -1,7 +1,7 @@
 def difficulty():
     while True:
         try:
-          input_diff = int(input("Pick a difficulty between 1-5: "))
+            input_diff = int(input("Pick a difficulty between 1-5: "))
 
         except ValueError:
             print("Please enter a number")
