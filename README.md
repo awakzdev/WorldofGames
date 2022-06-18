@@ -1,5 +1,5 @@
 # WorldofGames
 DevOps Project - Jenkins Github Integration CI/CD
 
-## How to play : 
+To play use : 
 `python MainGame.py`
