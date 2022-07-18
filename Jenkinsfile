@@ -17,7 +17,7 @@ pipeline {
                 sh 'docker build -t awakz/worldofgames:latest .'
             }
         }
-        stage('login to dockerhub') {
+        stage('pre-push (login)') {
             steps {
                 sh 'echo $dockerhub_PSW | docker login -u $dockerhub_USR --password-stdin'
             }
